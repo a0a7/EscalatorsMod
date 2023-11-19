@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.sudolev.escalators;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.Items;
@@ -13,12 +13,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod("examplemod")
-public class ExampleMod {
+@Mod("escalators")
+public class CreateEscalators {
 
     public static final Logger LOGGER = LogManager.getLogger();
 
-    public ExampleMod() {
+    public CreateEscalators() {
 
         // This is our mod's event bus, used for things like registry or lifecycle events
         IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
