@@ -8,7 +8,6 @@ import com.simibubi.create.content.kinetics.belt.BeltSlope;
 import com.simibubi.create.content.kinetics.belt.item.BeltConnectorItem;
 import com.simibubi.create.content.kinetics.simpleRelays.AbstractSimpleShaftBlock;
 import com.simibubi.create.content.kinetics.simpleRelays.ShaftBlock;
-import com.simibubi.create.foundation.advancement.AllAdvancements;
 import com.simibubi.create.foundation.block.ProperWaterloggedBlock;
 import com.simibubi.create.foundation.utility.VecHelper;
 import com.simibubi.create.infrastructure.config.AllConfigs;
@@ -257,9 +256,7 @@ public class EscalatorItem extends BeltConnectorItem {
     public static boolean validateAxis(Level world, BlockPos pos) {
         if (!world.isLoaded(pos))
             return false;
-        if (!ShaftBlock.isShaft(world.getBlockState(pos)))
-            return false;
-        return true;
+        return ShaftBlock.isShaft(world.getBlockState(pos));
     }
 
 }
