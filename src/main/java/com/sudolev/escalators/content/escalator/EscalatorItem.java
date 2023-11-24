@@ -1,6 +1,5 @@
 package com.sudolev.escalators.content.escalator;
 
-import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.belt.BeltBlock;
 import com.simibubi.create.content.kinetics.belt.BeltPart;
@@ -11,6 +10,7 @@ import com.simibubi.create.content.kinetics.simpleRelays.ShaftBlock;
 import com.simibubi.create.foundation.block.ProperWaterloggedBlock;
 import com.simibubi.create.foundation.utility.VecHelper;
 import com.simibubi.create.infrastructure.config.AllConfigs;
+import com.sudolev.escalators.registries.CEBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -111,7 +111,7 @@ public class EscalatorItem extends BeltConnectorItem {
                     .getValue(BlockStateProperties.AXIS) == Direction.Axis.X ? Direction.Axis.Z : Direction.Axis.X);
 
         List<BlockPos> beltsToCreate = getBeltChainBetween(start, end, slope, facing);
-        BlockState beltBlock = AllBlocks.BELT.getDefaultState();
+        BlockState beltBlock = CEBlocks.ESCALATOR.getDefaultState();
         boolean failed = false;
 
         for (BlockPos pos : beltsToCreate) {
@@ -142,7 +142,7 @@ public class EscalatorItem extends BeltConnectorItem {
             return;
 
         for (BlockPos pos : beltsToCreate)
-            if (AllBlocks.BELT.has(world.getBlockState(pos)))
+            if (CEBlocks.ESCALATOR.has(world.getBlockState(pos)))
                 world.destroyBlock(pos, false);
     }
 

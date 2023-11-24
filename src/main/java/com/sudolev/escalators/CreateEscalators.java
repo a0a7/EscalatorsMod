@@ -5,6 +5,7 @@ import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipHelper;
 import com.simibubi.create.foundation.item.TooltipModifier;
+import com.sudolev.escalators.registries.CEBlocks;
 import com.sudolev.escalators.registries.CEItems;
 import com.sudolev.escalators.registries.CETab;
 import net.minecraft.resources.ResourceLocation;
@@ -36,6 +37,7 @@ public class CreateEscalators {
                 .getModEventBus();
         REGISTRATE.registerEventListeners(modEventBus);
         CETab.register(modEventBus);
+        CEBlocks.register();
         CEItems.register();
     }
 

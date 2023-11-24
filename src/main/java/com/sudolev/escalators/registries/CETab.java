@@ -15,10 +15,10 @@ public class CETab {
             CreativeModeTab.builder()
                     .title(Components.literal(CreateEscalators.NAME))
                     .icon(() -> CEItems.ESCALATOR.get().asItem().getDefaultInstance())
-                    .displayItems((parameters, output) -> CreateEscalators.REGISTRATE
-                            .getAll(Registries.BLOCK).stream()
-                            .map(entry -> entry.get().asItem())
-                            .forEach(output::accept))
+                    //.displayItems((parameters, output) -> CreateEscalators.REGISTRATE
+                            //.getAll(Registries.BLOCK).stream()
+                            //.map(entry -> entry.get().asItem())
+                            //.forEach(output::accept))
                     ::build);
 
     public static void register(IEventBus modEventBus) {
